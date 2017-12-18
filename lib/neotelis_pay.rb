@@ -1,4 +1,13 @@
+require 'uri'
+require 'openssl'
+require 'digest/md5'
+
 require "neotelis_pay/version"
+require "neotelis_pay/util/crypt"
+require "neotelis_pay/util/des"
+require "neotelis_pay/util/http_post"
+require "neotelis_pay/service"
+require "neotelis_pay/railtie" if defined?(Rails)
 
 module NeotelisPay
   @client_params = {}
@@ -20,7 +29,12 @@ module NeotelisPay
   SERVICE_TYPE_PAY_CONFIRM = 'payConfirm'
 
   class<< self
-    attr_accessor :merchant_id, :request_ip, :secret_key, :debug_mode
+    #merchant_id 商户账号
+    #secret_key 加密key
+    #merchant_abbr 商户名称
+    #product_name 商品名称
+    #request_ip 请求地址
+    attr_accessor :merchant_id, :merchant_abbr, :product_name, :request_ip, :secret_key, :debug_mode
     attr_reader :api_base_url
 
     def api_base_url=(url)
