@@ -29,8 +29,8 @@ module NeotelisPay
         end
         data_str = data_arr.join('')
         #MD5摘要
-        data_md5 =  NeotelisPay::Utils::Crypt.crypt_md5(data_str, NeotelisPay.secret_key)
-        return data_str, data_md5
+        data_md5_1, data_md5_2 =  NeotelisPay::Utils::Crypt.crypt_md5(data_str, NeotelisPay.secret_key)
+        return data_str, data_md5_2
       end
 
       #排序
