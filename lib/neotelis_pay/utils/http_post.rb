@@ -28,8 +28,9 @@ module NeotelisPay
         end
         data_str = data_arr.join('')
         #MD5摘要
-        data_md5_1, data_md5_2 =  NeotelisPay::Utils::Crypt.crypt_md5(data_str, NeotelisPay.secret_key)
-        return data_str, data_md5_2
+        data_md5_1, data_md5_2 =  NeotelisPay::Utils::Crypt.crypt_md5(data_str, '')
+        data_md5_3, data_md5_4 =  NeotelisPay::Utils::Crypt.crypt_md5(data_md5_2, NeotelisPay.secret_key)
+        return data_str, data_md5_4.upcase
       end
 
       #排序
@@ -60,7 +61,10 @@ module NeotelisPay
           logger = Logger.new(log_file)
           logger.info('--------------NEOTELIS PAY DEBUG--------------')
           logger.info("URL:#{api_url.to_s}")
+          logger.info("DES_PARAMS:#{des_params.to_s}")
           logger.info("PARAMS:#{func_all_params.to_s}")
+          logger.info("SIGN_STRING:#{sign_value}")
+          logger.info("SIGN_DATA:#{sign_data}")
           logger.info("RESPONSE:#{html_response.force_encoding('UTF-8')}")
         end
 

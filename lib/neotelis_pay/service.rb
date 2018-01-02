@@ -130,8 +130,6 @@ module NeotelisPay
                     "amount" => amount,
                     "currency" => currency,
                     "orderTime" => Time.now.strftime("%Y%m%d%H%M%S"),
-                    "merAcDate" => Time.now.strftime("%Y%m%d"),
-                    "merchantAbbr" => NeotelisPay.merchant_abbr,
                     "productName" => NeotelisPay.product_name || product_name,
                     "productDesc" => NeotelisPay.product_desc || product_desc,
                     "notifyUrl" => notify_url}
