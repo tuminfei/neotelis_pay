@@ -1,5 +1,4 @@
 require 'logger'
-require 'des'
 
 module NeotelisPay
   module Utils
@@ -59,7 +58,7 @@ module NeotelisPay
         if NeotelisPay.debug_mode
           log_file = File.join(Rails.root, "log", "neotelis_pay.log")
           logger = Logger.new(log_file)
-          logger.info('--------------SUNING PAY DEBUG--------------')
+          logger.info('--------------NEOTELIS PAY DEBUG--------------')
           logger.info("URL:#{api_url.to_s}")
           logger.info("PARAMS:#{func_all_params.to_s}")
           logger.info("RESPONSE:#{html_response.force_encoding('UTF-8')}")

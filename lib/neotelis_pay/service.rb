@@ -23,7 +23,7 @@ module NeotelisPay
                     "useTime" => use_time}
       post_params = NeotelisPay.client_params.merge(options).merge(input_hash)
       #调用查询接口
-      msg = NeotelisPay::Util::HttpPost.send_post(service_name, post_params)
+      msg = NeotelisPay::Utils::HttpPost.send_post(service_name, post_params)
       msg
     end
 
@@ -37,7 +37,7 @@ module NeotelisPay
                     "verifyCode" => verify_code}
       post_params = NeotelisPay.client_params.merge(options).merge(input_hash)
       #调用查询接口
-      msg = NeotelisPay::Util::HttpPost.send_post(service_name, post_params)
+      msg = NeotelisPay::Utils::HttpPost.send_post(service_name, post_params)
       msg
     end
 
@@ -86,7 +86,7 @@ module NeotelisPay
                     "bindId" => bind_id}
       post_params = NeotelisPay.client_params.merge(options).merge(input_hash)
       #调用查询接口
-      msg = NeotelisPay::Util::HttpPost.send_post(service_name, post_params)
+      msg = NeotelisPay::Utils::HttpPost.send_post(service_name, post_params)
       msg
     end
 
@@ -104,7 +104,7 @@ module NeotelisPay
                     "amount" => amount}
       post_params = NeotelisPay.client_params.merge(options).merge(input_hash)
       #调用查询接口
-      msg = NeotelisPay::Util::HttpPost.send_post(service_name, post_params)
+      msg = NeotelisPay::Utils::HttpPost.send_post(service_name, post_params)
       msg
     end
 
@@ -136,7 +136,7 @@ module NeotelisPay
                     "notifyUrl" => notify_url}
       post_params = NeotelisPay.client_params.merge(options).merge(input_hash)
       #调用查询接口
-      msg = NeotelisPay::Util::HttpPost.send_post(service_name, post_params)
+      msg = NeotelisPay::Utils::HttpPost.send_post(service_name, post_params)
       msg
     end
 

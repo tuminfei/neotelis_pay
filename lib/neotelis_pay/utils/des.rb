@@ -32,32 +32,32 @@ module NeotelisPay
         utf8_str = dec_str.encode("UTF-8")
         return utf8_str
       end
-    end
 
-    #获取需要加密的字段
-    def self.des_param_list(service_type)
-      des_key_list = []
-      case service_type
-        when NeotelisPay::SERVICE_TYPE_SIGN_APPLY
-          des_key_list << 'userToken'
-          des_key_list << 'payerName'
-          des_key_list << 'certNo'
-          des_key_list << 'bankCardNo'
-        when NeotelisPay::SERVICE_TYPE_SIGN_CONFIRM
-          des_key_list << 'token'
-          des_key_list << 'verifyCode'
-        when NeotelisPay::SERVICE_TYPE_PREPAY
-          des_key_list << 'userToken'
-          des_key_list << 'payerName'
-          des_key_list << 'certNo'
-          des_key_list << 'bankCardNo'
-        when NeotelisPay::SERVICE_TYPE_PAY_CONFIRM
-          des_key_list << 'token'
-          des_key_list << 'verifyCode'
-        when NeotelisPay::SERVICE_TYPE_GATEWAY_PAY
-          des_key_list << ''
+      #获取需要加密的字段
+      def self.des_param_list(service_type)
+        des_key_list = []
+        case service_type
+          when NeotelisPay::SERVICE_TYPE_SIGN_APPLY
+            des_key_list << 'userToken'
+            des_key_list << 'payerName'
+            des_key_list << 'certNo'
+            des_key_list << 'bankCardNo'
+          when NeotelisPay::SERVICE_TYPE_SIGN_CONFIRM
+            des_key_list << 'token'
+            des_key_list << 'verifyCode'
+          when NeotelisPay::SERVICE_TYPE_PREPAY
+            des_key_list << 'userToken'
+            des_key_list << 'payerName'
+            des_key_list << 'certNo'
+            des_key_list << 'bankCardNo'
+          when NeotelisPay::SERVICE_TYPE_PAY_CONFIRM
+            des_key_list << 'token'
+            des_key_list << 'verifyCode'
+          when NeotelisPay::SERVICE_TYPE_GATEWAY_PAY
+            des_key_list << ''
+        end
+        return des_key_list
       end
-      return des_key_list
     end
   end
 end
