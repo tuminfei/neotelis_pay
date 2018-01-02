@@ -30,7 +30,7 @@ module NeotelisPay
         #MD5摘要
         data_md5_1, data_md5_2 =  NeotelisPay::Utils::Crypt.crypt_md5(data_str, '')
         data_md5_3, data_md5_4 =  NeotelisPay::Utils::Crypt.crypt_md5(data_md5_2, NeotelisPay.secret_key)
-        return data_str, data_md5_4.upcase
+        return data_str, data_md5_4
       end
 
       #排序
