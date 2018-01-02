@@ -107,5 +107,38 @@ module NeotelisPay
       msg = NeotelisPay::Util::HttpPost.send_post(service_name, post_params)
       msg
     end
+
+    # 网关支付接口
+    # bankNo	银行编码
+    # orderId	商户订单号
+    # amount	订单金额
+    # currency	币种
+    # orderTime	订单日期
+    # productDesc	商品描述
+    # productId	商品编号
+    # productName	商品名称
+    # productNum	商品数量
+    # notifyUrl	后台通知URL
+    # callbackUrl	前台地址
+    # reserved1	保留字段1
+    # reserved2	保留字段2
+    def self.post_gateway_pay(order_id, amount, currency, product_name, bank_no, notify_url, options={})
+      service_name = "gatewayPay"
+      input_hash = {"type" => service_name,
+                    "bankNo" => bank_no,
+                    "orderId" => order_id,
+                    "amount" => amount,
+                    "currency" => currency,
+                    "orderTime" => Time.now.strftime("%Y%m%d%H%M%S"),
+                    "merAcDate" => Time.now.strftime("%Y%m%d"),
+                    "merchantAbbr" => NeotelisPay.merchant_abbr,
+                    "productName" => NeotelisPay.product_name || product_name,
+                    "notifyUrl" => notify_url}
+      post_params = NeotelisPay.client_params.merge(options).merge(input_hash)
+      #调用查询接口
+      msg = NeotelisPay::Util::HttpPost.send_post(service_name, post_params)
+      msg
+    end
+
   end
 end

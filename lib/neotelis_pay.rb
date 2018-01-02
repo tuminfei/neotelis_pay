@@ -27,6 +27,9 @@ module NeotelisPay
   SERVICE_TYPE_PREPAY = 'prepay'
   #签约支付确认接口
   SERVICE_TYPE_PAY_CONFIRM = 'payConfirm'
+  #网关支付接口
+  SERVICE_TYPE_GATEWAY_PAY = 'gatewayPay'
+
 
   class<< self
     #merchant_id 商户账号
