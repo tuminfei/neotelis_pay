@@ -54,6 +54,8 @@ module NeotelisPay
         when NeotelisPay::SERVICE_TYPE_PAY_CONFIRM
           des_key_list << 'token'
           des_key_list << 'verifyCode'
+        when NeotelisPay::SERVICE_TYPE_GATEWAY_PAY
+          des_key_list << ''
       end
       return des_key_list
     end
