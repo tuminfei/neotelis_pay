@@ -122,7 +122,7 @@ module NeotelisPay
     # callbackUrl	前台地址
     # reserved1	保留字段1
     # reserved2	保留字段2
-    def self.post_gateway_pay(order_id, amount, currency, product_name, bank_no, notify_url, options={})
+    def self.post_gateway_pay(order_id, amount, currency, product_name, product_desc, bank_no, notify_url, options={})
       service_name = "gatewayPay"
       input_hash = {"type" => service_name,
                     "bankNo" => bank_no,
@@ -133,6 +133,7 @@ module NeotelisPay
                     "merAcDate" => Time.now.strftime("%Y%m%d"),
                     "merchantAbbr" => NeotelisPay.merchant_abbr,
                     "productName" => NeotelisPay.product_name || product_name,
+                    "productDesc" => NeotelisPay.product_desc || product_desc,
                     "notifyUrl" => notify_url}
       post_params = NeotelisPay.client_params.merge(options).merge(input_hash)
       #调用查询接口

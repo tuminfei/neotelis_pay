@@ -38,7 +38,7 @@ module NeotelisPay
     #merchant_abbr 商户名称
     #product_name 商品名称
     #request_ip 请求地址
-    attr_accessor :merchant_id, :merchant_abbr, :product_name, :request_ip, :secret_key, :debug_mode
+    attr_accessor :merchant_id, :merchant_abbr, :product_name, :product_desc, :request_ip, :secret_key, :debug_mode
     attr_reader :api_base_url
 
     def api_base_url=(url)
