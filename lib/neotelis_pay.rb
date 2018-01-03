@@ -8,6 +8,7 @@ require "neotelis_pay/utils/crypt"
 require "neotelis_pay/utils/des"
 require "neotelis_pay/utils/http_post"
 require "neotelis_pay/service"
+require "neotelis_pay/result"
 require "neotelis_pay/railtie" if defined?(Rails)
 
 module NeotelisPay

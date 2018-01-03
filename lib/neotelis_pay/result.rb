@@ -47,8 +47,8 @@ module NeotelisPay
     }
 
     def initialize(result)
-      self.raw = result
-      self.msg = JSON.parse(result)
+      self.raw = result.to_s
+      self.msg = result
     end
 
     def success?
