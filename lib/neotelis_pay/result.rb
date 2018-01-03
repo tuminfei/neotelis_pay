@@ -23,6 +23,7 @@ module NeotelisPay
     ORDER_TYPE_QQSM = 30
     ORDER_TYPE_JDSM = 50
 
+    # 网关支付-银行编码
     BANK_CODE_MAP = {
         'CCB' => '建设银行',
         'HXB' =>	'华夏银行',
