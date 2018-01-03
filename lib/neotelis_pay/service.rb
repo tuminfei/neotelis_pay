@@ -1,5 +1,6 @@
 module NeotelisPay
   class Service
+    ########################交易类接口########################
 
     # 签约申请接口
     # userToken	用户手机号
@@ -133,6 +134,18 @@ module NeotelisPay
                     "productName" => NeotelisPay.product_name || product_name,
                     "productDesc" => NeotelisPay.product_desc || product_desc,
                     "notifyUrl" => notify_url}
+      post_params = NeotelisPay.client_params.merge(options).merge(input_hash)
+      #调用查询接口
+      msg = NeotelisPay::Utils::HttpPost.send_post(service_name, post_params)
+      msg
+    end
+
+    ########################查询类接口########################
+    def self.query_order(order_type, order_id, options={})
+      service_name = "queryOrder"
+      input_hash = {"type" => service_name,
+                    "orderType" => order_type,
+                    "orderId" => order_id}
       post_params = NeotelisPay.client_params.merge(options).merge(input_hash)
       #调用查询接口
       msg = NeotelisPay::Utils::HttpPost.send_post(service_name, post_params)
