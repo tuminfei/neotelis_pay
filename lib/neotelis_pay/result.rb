@@ -23,6 +23,28 @@ module NeotelisPay
     ORDER_TYPE_QQSM = 30
     ORDER_TYPE_JDSM = 50
 
+    BANK_CODE_MAP = {
+        'CCB' => '建设银行',
+        'HXB' =>	'华夏银行',
+        'CEB'	=> '光大银行',
+        'BOC'	=> '中国银行',
+        'HEBB' => '河北银行',
+        'CIB'	=> '兴业银行',
+        'QDCB' =>'青岛银行',
+        'BEAI' => '东亚银行',
+        'GDB'	=> '广发银行',
+        'CNCB' => '中信银行',
+        'ABC'	=> '农业银行',
+        'PAB'	=> '平安银行',
+        'SPDB'	=> '浦发银行',
+        'BOCOM'	=> '交通银行',
+        'PSBC'	=> '邮政银行',
+        'CMB'	=> '招商银行',
+        'CMBC' => '民生银行',
+        'ICBC' => '工商银行',
+        'BOS' =>'上海银行'
+    }
+
     def initialize(result)
       self.raw = result
       self.msg = JSON.parse(result)
