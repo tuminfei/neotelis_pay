@@ -26,7 +26,7 @@ module NeotelisPay
     # 网关支付-银行编码
     BANK_CODE_MAP = {
         'CCB' => '建设银行',
-        'HXB' =>	'华夏银行',
+        'HXB' => '华夏银行',
         'CEB'	=> '光大银行',
         'BOC'	=> '中国银行',
         'HEBB' => '河北银行',
